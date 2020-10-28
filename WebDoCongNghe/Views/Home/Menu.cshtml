@@ -1,0 +1,12 @@
+﻿@using WebDoCongNghe.Models;
+@model List<DanhMucSp>
+<ul class="menu">
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="/Home/ToDanhMuc/@item.MaDanhMuc">@item.Ten</a>
+            @Html.Action("LoadMenuCon", "Home", new { MaDmCha = item.MaDanhMuc })
+
+        </li>
+    }
+</ul>
